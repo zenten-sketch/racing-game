@@ -4,18 +4,18 @@ package.name = racing2d
 package.domain = org.test
 source.dir = .
 source.include_exts = py,png,jpg,wav
-source.include_patterns = assets/*
+source.include_patterns = assets/*,sounds/*
 version = 1.0
-requirements = python3,pygame
+requirements = python3,kivy,pygame
 orientation = portrait
 fullscreen = 1
-android.api = 33
-android.minapi = 23
-android.ndk = 25b
+android.api = 31
+android.minapi = 21
+android.ndk = 23b
 android.permissions = INTERNET
-android.arch = arm64-v8a
+android.archs = armeabi-v7a
 android.accept_sdk_license = True
-p4a.branch = develop
+p4a.branch = master
 
 [buildozer]
 log_level = 2
