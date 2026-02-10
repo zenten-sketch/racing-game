@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-22.04
-    timeout-minutes: 60
+    timeout-minutes: 120
 
     steps:
     - uses: actions/checkout@v3
@@ -22,7 +22,7 @@ jobs:
       uses: actions/setup-java@v3
       with:
         distribution: temurin
-        java-version: '17'
+        java-version: '11'
 
     - name: Install system deps
       run: |
@@ -45,11 +45,15 @@ jobs:
           automake \
           libtool \
           pkg-config \
-          unzip
+          unzip \
+          cmake \
+          gettext
 
     - name: Install buildozer
       run: |
-        pip install buildozer cython
+        pip install --upgrade pip setuptools wheel
+        pip install buildozer==1.5.0
+        pip install cython==0.29.36
 
     - name: Build APK
       run: |
